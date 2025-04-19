@@ -13,7 +13,7 @@ export default function HomePage() {
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent to-background" />
           <div className="relative h-[500px] w-full overflow-hidden">
             <img
-              src="./images/HomePage1.png"
+              src="/images/HomePage1.png" // Changed from ./images/HomePage1.png
               alt="Children playing outside under a big tree with swings"
               className="object-cover w-full h-full object-[60%_75%]"
             />
