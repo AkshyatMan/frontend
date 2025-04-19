@@ -28,15 +28,15 @@ export default function Header({ activePage = "home" }) {
           >
             Blog
           </Link>
-          <Link to="#" className="text-sm font-medium hover:text-primary">
+          {/* <Link to="#" className="text-sm font-medium hover:text-primary">
             Events
-          </Link>
+          </Link> */}
           <Link to="#" className="text-sm font-medium hover:text-primary">
             About
           </Link>
-          <Link to="#" className="text-sm font-medium hover:text-primary">
+          {/* <Link to="#" className="text-sm font-medium hover:text-primary">
             Contact
-          </Link>
+          </Link> */}
         </nav>
         <Button size="sm" className="hidden md:flex">
           Visit Us
