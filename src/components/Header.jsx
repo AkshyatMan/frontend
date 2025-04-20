@@ -12,36 +12,48 @@ export default function Header({ activePage = "home" }) {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <BookOpen className="h-6 w-6 text-primary" />
-          <span className="text-xl font-bold">Dhumbarahi Children Library</span>
+          <BookOpen className="h-6 w-6 text-sky-blue" />
+          <span className="text-xl font-bold text-sky-blue">Dhumbarahi Children Library</span>
         </div>
         <nav className="hidden md:flex md:gap-6">
           <Link
             to="/"
-            className={`text-sm font-medium ${activePage === "home" ? "text-primary" : "hover:text-primary"}`}
+            className={`text-sm font-medium ${activePage === "home" ? "text-sky-blue font-semibold" : "text-muted-foreground hover:text-sky-blue"}`}
           >
             Home
           </Link>
           <Link
             to="/blog"
-            className={`text-sm font-medium ${activePage === "blog" ? "text-primary" : "hover:text-primary"}`}
+            className={`text-sm font-medium ${activePage === "blog" ? "text-sky-blue font-semibold" : "text-muted-foreground hover:text-sky-blue"}`}
           >
             Blog
           </Link>
           {/* <Link to="#" className="text-sm font-medium hover:text-primary">
             Events
           </Link> */}
-          <Link to="#" className="text-sm font-medium hover:text-primary">
+          <Link
+            to="/about"
+            className={`text-sm font-medium ${activePage === "about" ? "text-sky-blue font-semibold" : "text-muted-foreground hover:text-sky-blue"}`}
+          >
             About
           </Link>
           {/* <Link to="#" className="text-sm font-medium hover:text-primary">
             Contact
           </Link> */}
         </nav>
-        <Button size="sm" className="hidden md:flex">
+        <Button
+          size="sm"
+          className="hidden md:flex bg-grass-green hover:bg-grass-green/90 text-white"
+          onClick={() => {
+            const footer = document.getElementById('footer-section');
+            if (footer) {
+              footer.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+        >
           Visit Us
         </Button>
-        <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <Button variant="ghost" size="icon" className="md:hidden text-sky-blue" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -65,28 +77,42 @@ export default function Header({ activePage = "home" }) {
             <div className="container py-4 flex flex-col gap-4">
               <Link
                 to="/"
-                className={`text-sm font-medium ${activePage === "home" ? "text-primary" : ""}`}
+                className={`text-sm font-medium ${activePage === "home" ? "text-sky-blue font-semibold" : "text-muted-foreground"}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 to="/blog"
-                className={`text-sm font-medium ${activePage === "blog" ? "text-primary" : ""}`}
+                className={`text-sm font-medium ${activePage === "blog" ? "text-sky-blue font-semibold" : "text-muted-foreground"}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Blog
               </Link>
-              <Link to="#" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              {/* <Link to="#" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
                 Events
-              </Link>
-              <Link to="#" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              </Link> */}
+              <Link
+                to="/about"
+                className={`text-sm font-medium ${activePage === "about" ? "text-sky-blue font-semibold" : "text-muted-foreground"}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 About
               </Link>
-              <Link to="#" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              {/* <Link to="#" className="text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
                 Contact
-              </Link>
-              <Button size="sm" className="w-full">
+              </Link> */}
+              <Button
+                size="sm"
+                className="w-full bg-grass-green hover:bg-grass-green/90 text-white"
+                onClick={() => {
+                  const footer = document.getElementById('footer-section');
+                  if (footer) {
+                    footer.scrollIntoView({ behavior: 'smooth' });
+                  }
+                  setMobileMenuOpen(false); // Close mobile menu after clicking
+                }}
+              >
                 Visit Us
               </Button>
             </div>
